@@ -35,7 +35,7 @@ public class StickerPropertyModel implements Serializable {
         return horizonMirror;
     }
 
-    public void setHorizonMirror(int horizonMirror) {
+    public void setHorizonMirror(final int horizonMirror) {
         this.horizonMirror = horizonMirror;
     }
 
@@ -43,7 +43,7 @@ public class StickerPropertyModel implements Serializable {
         return stickerURL;
     }
 
-    public void setStickerURL(String stickerURL) {
+    public void setStickerURL(final String stickerURL) {
         this.stickerURL = stickerURL;
     }
 
@@ -51,7 +51,7 @@ public class StickerPropertyModel implements Serializable {
         return stickerId;
     }
 
-    public void setStickerId(long stickerId) {
+    public void setStickerId(final long stickerId) {
         this.stickerId = stickerId;
     }
 
@@ -59,7 +59,7 @@ public class StickerPropertyModel implements Serializable {
         return text;
     }
 
-    public void setText(String text) {
+    public void setText(final String text) {
         this.text = text;
     }
 
@@ -67,7 +67,7 @@ public class StickerPropertyModel implements Serializable {
         return xLocation;
     }
 
-    public void setxLocation(float xLocation) {
+    public void setxLocation(final float xLocation) {
         this.xLocation = xLocation;
     }
 
@@ -75,7 +75,7 @@ public class StickerPropertyModel implements Serializable {
         return yLocation;
     }
 
-    public void setyLocation(float yLocation) {
+    public void setyLocation(final float yLocation) {
         this.yLocation = yLocation;
     }
 
@@ -83,7 +83,7 @@ public class StickerPropertyModel implements Serializable {
         return degree;
     }
 
-    public void setDegree(float degree) {
+    public void setDegree(final float degree) {
         this.degree = degree;
     }
 
@@ -91,7 +91,7 @@ public class StickerPropertyModel implements Serializable {
         return scaling;
     }
 
-    public void setScaling(float scaling) {
+    public void setScaling(final float scaling) {
         this.scaling = scaling;
     }
 
@@ -99,7 +99,7 @@ public class StickerPropertyModel implements Serializable {
         return order;
     }
 
-    public void setOrder(int order) {
+    public void setOrder(final int order) {
         this.order = order;
     }
 }

@@ -10,3 +10,6 @@
 增加可以添加文字
 
 ![](https://github.com/nimengbo/StickerView/blob/master/bubbleShot.jpg)
+
+
+FloatingActionButton address : https://github.com/futuresimple/android-floating-action-button

@@ -2,6 +2,7 @@
 <android.support.design.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -24,19 +25,52 @@
 
     <include layout="@layout/content_main"/>
 
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab"
+    <!--<android.support.design.widget.FloatingActionButton-->
+    <!--android:id="@+id/fab"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_gravity="bottom|end"-->
+    <!--android:layout_margin="@dimen/fab_margin"-->
+    <!--android:src="@mipmap/ic_add_red_e73a3d"-->
+    <!--app:backgroundTint="@color/red_e73a3d"-->
+    <!--app:borderWidth="0dp"-->
+    <!--app:elevation="10dp"-->
+    <!--app:fabSize="normal"-->
+    <!--app:pressedTranslationZ="20dp"-->
+    <!--app:rippleColor="@color/red_b00606"-->
+    <!--/>-->
+
+    <com.getbase.floatingactionbutton.FloatingActionsMenu
+        android:id="@+id/multiple_actions"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        fab:fab_addButtonColorNormal="@color/red_e73a3d"
+        fab:fab_addButtonColorPressed="@color/red_b00606"
+        fab:fab_addButtonPlusIconColor="@color/white"
         android:layout_gravity="bottom|end"
-        android:layout_margin="@dimen/fab_margin"
-        android:src="@mipmap/ic_add_white"
-        app:backgroundTint="@color/red_e73a3d"
-        app:borderWidth="0dp"
-        app:elevation="10dp"
-        app:fabSize="normal"
-        app:pressedTranslationZ="20dp"
-        app:rippleColor="@color/red_b00606"
-        />
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="16dp"
+        fab:fab_labelsPosition="left"
+        fab:fab_labelStyle="@style/menu_labels_style"
+        >
+
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/action_add_sticker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            fab:fab_colorNormal="@color/red_e73a3d"
+            fab:fab_title="@string/add_sticker"
+            fab:fab_colorPressed="@color/red_b00606"/>
+
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/action_add_bubble"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            fab:fab_colorNormal="@color/red_e73a3d"
+            fab:fab_title="@string/add_bubble"
+            fab:fab_colorPressed="@color/red_b00606"/>
+
+    </com.getbase.floatingactionbutton.FloatingActionsMenu>
 
 </android.support.design.widget.CoordinatorLayout>

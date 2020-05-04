@@ -25,7 +25,7 @@ public class FileUtils {
 
     private static final String TEMP_DIR = "Abner/.TEMP";
 
-    public static FileUtils getInstance(Context context) {
+    public static FileUtils getInstance(final Context context) {
         if (instance == null) {
             synchronized (FileUtils.class) {
                 if (instance == null) {
@@ -43,7 +43,7 @@ public class FileUtils {
      * @param bm
      * @return
      */
-    public static String saveBitmapToLocal(Bitmap bm, Context context) {
+    public static String saveBitmapToLocal(final Bitmap bm, final Context context) {
         String path = null;
         try {
             File file = FileUtils.getInstance(context).createTempFile("IMG_", ".jpg");
@@ -69,7 +69,7 @@ public class FileUtils {
      * @return
      * @throws java.io.IOException
      */
-    public File createTempFile(String prefix, String extension)
+    public File createTempFile(final String prefix, final String extension)
             throws IOException {
         File file = new File(getAppDirPath() + ".TEMP/" + prefix
                 + System.currentTimeMillis() + extension);
@@ -130,7 +130,7 @@ public class FileUtils {
      *
      * @param dirName
      */
-    public File creatSDDir(String dirName) {
+    public File creatSDDir(final String dirName) {
         File dir = new File(getLocalPath() + dirName);
         dir.mkdirs();
         return dir;

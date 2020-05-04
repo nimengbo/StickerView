@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
     private View mAddBubble;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mContentRootView = (RelativeLayout) findViewById(R.id.rl_content_root);
@@ -86,14 +86,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
+    public boolean onCreateOptionsMenu(final Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
+    public boolean onOptionsItemSelected(final MenuItem item) {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
@@ -193,7 +193,7 @@ public class MainActivity extends AppCompatActivity {
     /**
      * 设置当前处于编辑模式的贴纸
      */
-    private void setCurrentEdit(StickerView stickerView) {
+    private void setCurrentEdit(final StickerView stickerView) {
         if (mCurrentView != null) {
             mCurrentView.setInEdit(false);
         }

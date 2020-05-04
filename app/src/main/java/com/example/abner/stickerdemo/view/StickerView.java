@@ -92,19 +92,19 @@ public class StickerView extends ImageView {
     //水平镜像
     private boolean isHorizonMirror = false;
 
-    public StickerView(Context context, AttributeSet attrs) {
+    public StickerView(final Context context, final AttributeSet attrs) {
         super(context, attrs);
         stickerId = 0;
         init();
     }
 
-    public StickerView(Context context) {
+    public StickerView(final Context context) {
         super(context);
         stickerId = 0;
         init();
     }
 
-    public StickerView(Context context, AttributeSet attrs, int defStyleAttr) {
+    public StickerView(final Context context, final AttributeSet attrs, final int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         stickerId = 0;
         init();
@@ -129,7 +129,7 @@ public class StickerView extends ImageView {
     }
 
     @Override
-    protected void onDraw(Canvas canvas) {
+    protected void onDraw(final Canvas canvas) {
         if (mBitmap != null) {
 
 
@@ -184,11 +184,11 @@ public class StickerView extends ImageView {
     }
 
     @Override
-    public void setImageResource(int resId) {
+    public void setImageResource(final int resId) {
         setBitmap(BitmapFactory.decodeResource(getResources(), resId));
     }
 
-    public void setBitmap(Bitmap bitmap) {
+    public void setBitmap(final Bitmap bitmap) {
         matrix.reset();
         mBitmap = bitmap;
         setDiagonalLength();
@@ -258,7 +258,7 @@ public class StickerView extends ImageView {
     }
 
     @Override
-    public boolean onTouchEvent(MotionEvent event) {
+    public boolean onTouchEvent(final MotionEvent event) {
         int action = MotionEventCompat.getActionMasked(event);
         boolean handled = true;
         switch (action) {
@@ -374,7 +374,7 @@ public class StickerView extends ImageView {
      * @param model
      * @return
      */
-    public StickerPropertyModel calculate(StickerPropertyModel model) {
+    public StickerPropertyModel calculate(final StickerPropertyModel model) {
         float[] v = new float[9];
         matrix.getValues(v);
         // translation is simple
@@ -420,7 +420,7 @@ public class StickerView extends ImageView {
      *
      * @return
      */
-    private boolean isInBitmap(MotionEvent event) {
+    private boolean isInBitmap(final MotionEvent event) {
         float[] arrayOfFloat1 = new float[9];
         this.matrix.getValues(arrayOfFloat1);
         //左上角
@@ -460,7 +460,7 @@ public class StickerView extends ImageView {
      * @param y
      * @return
      */
-    private boolean pointInRect(float[] xRange, float[] yRange, float x, float y) {
+    private boolean pointInRect(final float[] xRange, final float[] yRange, final float x, final float y) {
         //四条边的长度
         double a1 = Math.hypot(xRange[0] - xRange[1], yRange[0] - yRange[1]);
         double a2 = Math.hypot(xRange[1] - xRange[2], yRange[1] - yRange[2]);
@@ -511,7 +511,7 @@ public class StickerView extends ImageView {
      * @param event
      * @return
      */
-    private boolean isInResize(MotionEvent event) {
+    private boolean isInResize(final MotionEvent event) {
         int left = -20 + this.dst_resize.left;
         int top = -20 + this.dst_resize.top;
         int right = 20 + this.dst_resize.right;
@@ -524,7 +524,7 @@ public class StickerView extends ImageView {
      *
      * @param event
      */
-    private void midPointToStartPoint(MotionEvent event) {
+    private void midPointToStartPoint(final MotionEvent event) {
         float[] arrayOfFloat = new float[9];
         matrix.getValues(arrayOfFloat);
         float f1 = 0.0f * arrayOfFloat[0] + 0.0f * arrayOfFloat[1] + arrayOfFloat[2];
@@ -539,7 +539,7 @@ public class StickerView extends ImageView {
      *
      * @param paramPointF
      */
-    private void midDiagonalPoint(PointF paramPointF) {
+    private void midDiagonalPoint(final PointF paramPointF) {
         float[] arrayOfFloat = new float[9];
         this.matrix.getValues(arrayOfFloat);
         float f1 = 0.0F * arrayOfFloat[0] + 0.0F * arrayOfFloat[1] + arrayOfFloat[2];
@@ -558,7 +558,7 @@ public class StickerView extends ImageView {
      * @param event
      * @return
      */
-    private float rotationToStartPoint(MotionEvent event) {
+    private float rotationToStartPoint(final MotionEvent event) {
 
         float[] arrayOfFloat = new float[9];
         matrix.getValues(arrayOfFloat);
@@ -574,7 +574,7 @@ public class StickerView extends ImageView {
      * @param event
      * @return
      */
-    private float diagonalLength(MotionEvent event) {
+    private float diagonalLength(final MotionEvent event) {
         float diagonalLength = (float) Math.hypot(event.getX(0) - mid.x, event.getY(0) - mid.y);
         return diagonalLength;
     }
@@ -582,7 +582,7 @@ public class StickerView extends ImageView {
     /**
      * 计算双指之间的距离
      */
-    private float spacing(MotionEvent event) {
+    private float spacing(final MotionEvent event) {
         if (event.getPointerCount() == 2) {
             float x = event.getX(0) - event.getX(1);
             float y = event.getY(0) - event.getY(1);
@@ -600,11 +600,11 @@ public class StickerView extends ImageView {
         void onTop(StickerView stickerView);
     }
 
-    public void setOperationListener(OperationListener operationListener) {
+    public void setOperationListener(final OperationListener operationListener) {
         this.operationListener = operationListener;
     }
 
-    public void setInEdit(boolean isInEdit) {
+    public void setInEdit(final boolean isInEdit) {
         this.isInEdit = isInEdit;
         invalidate();
     }
